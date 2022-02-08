@@ -1,2 +1,4 @@
-# Starter Repo
-This repo has everything you need to get started on the program, good luck!
+# Thoi's update Repo
+
+Here I update the whole code base and removed unnecessary classes like models
+

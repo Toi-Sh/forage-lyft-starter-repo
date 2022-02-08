@@ -1,26 +1,10 @@
-from abc import ABC, abstractmethod
-from engine import engine
-from engine.Engine import Engine
+from serviceable import Serviceable
 
 
+class Car(Serviceable):
+    def __init__(self, engine, battery):
+        self.engine = engine
+        self.battery = battery
 
-class Car(ABC):
-    def __init__(self,current_date, last_service_date, current_mileage, last_service_mileage):
-        self.current_date=current_date
-        self.last_service_date=last_service_date
-        self.current_mileage=current_mileage
-        self.last_service_mileage = last_service_mileage
-        engine=""
-        battery=""
-
-
-    @abstractmethod
     def needs_service(self):
-        pass
-    def create_calliope(self):
-        self.engine="Capulet Engine"
-        self.battery="Spindler Battery"
-        
-    def create_glissade(self):
-        self.engine="Willoughby Engine"
-        self.battery="Spindler Battery"
+        return self.engine.needs_service() or self.battery.needs_service()
